@@ -21,7 +21,7 @@
         <Label Content="Paper man" HorizontalAlignment="Left" Margin="97,63,0,0" VerticalAlignment="Top" Height="43" Width="111" Foreground="White" FontSize="18"/>
         <Label Content="Логин" HorizontalAlignment="Left" Height="25" Margin="43,165,0,0" VerticalAlignment="Top" Background="White" Width="56"/>
         <Label Content="Пароль" HorizontalAlignment="Left" Height="25" Margin="43,205,0,0" VerticalAlignment="Top" Background="White" Width="56"/>
-        <TextBlock x:Name="Login" HorizontalAlignment="Left" Height="25" Margin="124,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="224"/>
+        <TextBlock x:Name="LoginTB" HorizontalAlignment="Left" Height="25" Margin="124,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="224"/>
 
 
     </Grid>

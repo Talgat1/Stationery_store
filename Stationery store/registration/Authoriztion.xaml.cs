@@ -31,7 +31,23 @@ namespace Stationery_store.registration
         private void Button_ClickVhod(object sender, RoutedEventArgs e)
         {
             //Vhod vh = new Vhod();
-            
+            foreach (var user in MainWindow.db.User)
+            {
+                if (user.Login == LoginTB.Text.Trim())
+                {
+                    //if (user.Password == PasswordTB.Password.Trim() && user.RoleID == 2)
+                    {
+                        MessageBox.Show($"Привет Пользователь {user.Login}");
+                        MainWindow.authUser = user;
+                        MessageBox.Show($"{MainWindow.authUser}");
+                    }
+                    //if (user.Password == PasswordTB.Password.Trim() && user.RoleID == 1)
+                    {
+                        MessageBox.Show($"Привет админ {user.Login}");
+
+                    }
+                }
+            }
         }
     }
 }
