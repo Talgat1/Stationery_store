@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Stationery_store
+namespace Stationery_store.db
 {
     using System;
     using System.Collections.Generic;

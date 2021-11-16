@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Stationery_store
+namespace Stationery_store.db
 {
     using System;
     using System.Data.Entity;
@@ -15,10 +15,10 @@ namespace Stationery_store
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Stationery_storeEntities : DbContext
+    public partial class Stationery_storeEntities2 : DbContext
     {
-        public Stationery_storeEntities()
-            : base("name=Stationery_storeEntities")
+        public Stationery_storeEntities2()
+            : base("name=Stationery_storeEntities2")
         {
         }
     
@@ -34,8 +34,8 @@ namespace Stationery_store
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Provider> Provider { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<Сustomer> Сustomer { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Сustomer> Сustomer { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

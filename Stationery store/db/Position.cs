@@ -7,30 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Stationery_store
+namespace Stationery_store.db
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Employees
+    public partial class Position
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employees()
+        public Position()
         {
-            this.Order = new HashSet<Order>();
+            this.Employees = new HashSet<Employees>();
         }
     
-        public int Id_employees { get; set; }
-        public string Surname { get; set; }
-        public string Name { get; set; }
-        public string Phone { get; set; }
-        public Nullable<int> Work_experience { get; set; }
         public int Id_position { get; set; }
-        public int Id_user { get; set; }
+        public string Name { get; set; }
     
-        public virtual Position Position { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
-        public virtual User User { get; set; }
+        public virtual ICollection<Employees> Employees { get; set; }
     }
 }

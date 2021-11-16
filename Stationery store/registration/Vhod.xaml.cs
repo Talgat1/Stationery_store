@@ -12,25 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Stationery_store.registration;
-using Stationery_store.db;
 
-namespace Stationery_store
+namespace Stationery_store.registration
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Vhod.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Vhod : Page
     {
-        public static Stationery_storeEntities2 db = new Stationery_storeEntities2();
-
-        public static User authUser;
-        public MainWindow()
+        public Vhod()
         {
             InitializeComponent();
-            MenuFrame.NavigationService.Navigate(new Authoriztion());
         }
-
-        
     }
 }

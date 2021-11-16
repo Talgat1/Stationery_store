@@ -7,19 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#E5E5E5">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="114*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="295*"/>
-        </Grid.RowDefinitions>
-        <Rectangle HorizontalAlignment="Left" Height="75" Margin="0,47,0,0" Stroke="Black" VerticalAlignment="Top" Width="792" Fill="#FF0038FF" Grid.RowSpan="2"/>
-
-        <Rectangle HorizontalAlignment="Left" Height="75" Margin="0,47,0,0" Stroke="Black" VerticalAlignment="Top" Width="79" Grid.RowSpan="2">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="Maaans.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Button Content="Зарегестрироваться" HorizontalAlignment="Left" Margin="248,61,0,0" Grid.Row="2" VerticalAlignment="Top" Width="278" Height="57" Background="#FF0038FF" Foreground="White" FontSize="14" Click="Button_ClickReg"/>
-
+        <Frame x:Name="MenuFrame" Grid.Row="1" Margin="20,0" NavigationUIVisibility="Hidden" />
     </Grid>
 </Window>

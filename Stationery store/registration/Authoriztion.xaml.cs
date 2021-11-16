@@ -15,22 +15,23 @@ using System.Windows.Shapes;
 using Stationery_store.registration;
 using Stationery_store.db;
 
-namespace Stationery_store
+
+namespace Stationery_store.registration
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Authoriztion.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Authoriztion : Page
     {
-        public static Stationery_storeEntities2 db = new Stationery_storeEntities2();
-
-        public static User authUser;
-        public MainWindow()
+        public Authoriztion()
         {
             InitializeComponent();
-            MenuFrame.NavigationService.Navigate(new Authoriztion());
         }
 
-        
+        private void Button_ClickVhod(object sender, RoutedEventArgs e)
+        {
+            //Vhod vh = new Vhod();
+            
+        }
     }
 }

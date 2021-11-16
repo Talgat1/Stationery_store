@@ -7,25 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Stationery_store
+namespace Stationery_store.db
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Delivery
+    public partial class Сustomer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Delivery()
+        public Сustomer()
         {
             this.Order = new HashSet<Order>();
         }
     
-        public int Id_delivery { get; set; }
-        public Nullable<System.DateTime> Date_delivery { get; set; }
-        public Nullable<int> Order_weight { get; set; }
-        public Nullable<bool> Delivered { get; set; }
+        public int Id_customer { get; set; }
+        public string Surname { get; set; }
+        public string Name { get; set; }
+        public string Phone { get; set; }
+        public Nullable<int> Age { get; set; }
+        public string address { get; set; }
+        public int Id_user { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Order { get; set; }
+        public virtual User User { get; set; }
     }
 }
