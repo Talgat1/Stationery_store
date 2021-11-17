@@ -12,24 +12,18 @@ namespace Stationery_store.db
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Role
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Role()
         {
-            this.Employees = new HashSet<Employees>();
-            this.Сustomer = new HashSet<Сustomer>();
+            this.User = new HashSet<User>();
         }
     
-        public int Id_user { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
         public int Id_role { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employees> Employees { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Сustomer> Сustomer { get; set; }
-        public virtual Role Role { get; set; }
+        public virtual ICollection<User> User { get; set; }
     }
 }

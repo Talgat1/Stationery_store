@@ -22,6 +22,8 @@
         <AssociationConnector Association="Stationery_storeModel.FK_Сustomer_User" ManuallyRouted="false" />
         <AssociationConnector Association="Stationery_storeModel.Order_Product" ManuallyRouted="false" />
         <AssociationConnector Association="Stationery_storeModel.Product_Provider" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Stationery_storeModel.Role" Width="1.5" PointX="0.75" PointY="8.375" />
+        <AssociationConnector Association="Stationery_storeModel.FK_User_Role" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

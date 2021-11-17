@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Stationery_store"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#E5E5E5">
+        Title="MainWindow" Height="1024" Width="1440" Background="#E5E5E5">
     <Grid>
-        <Frame x:Name="MenuFrame" Grid.Row="1" Margin="20,0" NavigationUIVisibility="Hidden" />
+        <Image Source="OpenPage.png" Stretch="Fill" Opacity="0.5" Grid.ColumnSpan="4"/>
+        <Button Content="Открыть приложение" HorizontalAlignment="Left" Margin="436,408,0,0" VerticalAlignment="Top" Width="538" Background="White" RenderTransformOrigin="1.12,4.6" Height="172" FontSize="48" Click="Button_ClickOpen"/>
     </Grid>
 </Window>

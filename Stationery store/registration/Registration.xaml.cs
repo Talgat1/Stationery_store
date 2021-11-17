@@ -18,7 +18,7 @@ namespace Stationery_store.registration
     /// <summary>
     /// Логика взаимодействия для Registration.xaml
     /// </summary>
-    public partial class Registration : Page
+    public partial class Registration : Window
     {
         public Registration()
         {

@@ -18,7 +18,7 @@ namespace Stationery_store.registration
     /// <summary>
     /// Логика взаимодействия для Vhod.xaml
     /// </summary>
-    public partial class Vhod : Page
+    public partial class Vhod : Window
     {
         public Vhod()
         {

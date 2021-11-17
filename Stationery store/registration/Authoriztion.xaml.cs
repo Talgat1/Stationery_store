@@ -21,7 +21,7 @@ namespace Stationery_store.registration
     /// <summary>
     /// Логика взаимодействия для Authoriztion.xaml
     /// </summary>
-    public partial class Authoriztion : Page
+    public partial class Authoriztion : Window
     {
         public Authoriztion()
         {
@@ -30,24 +30,30 @@ namespace Stationery_store.registration
 
         private void Button_ClickVhod(object sender, RoutedEventArgs e)
         {
-            //Vhod vh = new Vhod();
+            Vhod vh = new Vhod();
             foreach (var user in MainWindow.db.User)
             {
-                if (user.Login == LoginTB.Text.Trim())
+                if (user.Login == LoginTB.Text.Trim() && user.Password == PasswordTB.Text.Trim())
                 {
-                    //if (user.Password == PasswordTB.Password.Trim() && user.RoleID == 2)
-                    {
-                        MessageBox.Show($"Привет Пользователь {user.Login}");
-                        MainWindow.authUser = user;
-                        MessageBox.Show($"{MainWindow.authUser}");
-                    }
-                    //if (user.Password == PasswordTB.Password.Trim() && user.RoleID == 1)
-                    {
-                        MessageBox.Show($"Привет админ {user.Login}");
-
-                    }
+                    MessageBox.Show($"Привет Пользователь {user.Login}");
+                    Vhod whod = new Vhod();
+                    this.Close();
+                    whod.Show();
+                    break;
+                }
+                else
+                {
+                    MessageBox.Show($"Неверно введён логин или пароль!");
+                    break;
                 }
             }
+        }
+
+        private void Button_ClickRegis(object sender, RoutedEventArgs e)
+        {
+            Registration reg = new Registration();
+            this.Close();
+            reg.Show();
         }
     }
 }

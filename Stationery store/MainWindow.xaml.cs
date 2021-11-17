@@ -27,10 +27,14 @@ namespace Stationery_store
         public static User authUser;
         public MainWindow()
         {
-            InitializeComponent();
-            MenuFrame.NavigationService.Navigate(new Authoriztion());
+            InitializeComponent();            
         }
 
-        
+        private void Button_ClickOpen(object sender, RoutedEventArgs e)
+        {
+            Authoriztion aut = new Authoriztion();
+            this.Close();
+            aut.Show();
+        }
     }
 }
