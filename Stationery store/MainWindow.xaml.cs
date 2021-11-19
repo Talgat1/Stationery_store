@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Stationery_store.registration;
+using Stationery_store.authoriztion;
 using Stationery_store.db;
 
 namespace Stationery_store

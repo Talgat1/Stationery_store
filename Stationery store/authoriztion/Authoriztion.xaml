@@ -1,14 +1,13 @@
-﻿<Window x:Class="Stationery_store.registration.Authoriztion"
+﻿<Window x:Class="Stationery_store.authoriztion.Authoriztion"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Stationery_store.registration"
+      xmlns:local="clr-namespace:Stationery_store.authoriztion"
       mc:Ignorable="d" 
       d:DesignHeight="1024" d:DesignWidth="1440"
       Title="Authoriztion">
     <Grid Height="450" VerticalAlignment="Bottom">
-        
         <Image Source="/Stationery store;component/Res/Cans.png" Stretch="Fill" Opacity="0.5" Margin="0,-541,0,0" />
         <Rectangle HorizontalAlignment="Left" Height="205" Margin="0,-452,0,0" Stroke="Black" VerticalAlignment="Top" Width="225">
             <Rectangle.Fill>

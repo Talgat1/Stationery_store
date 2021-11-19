@@ -5,14 +5,27 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Stationery_store.registration"
       mc:Ignorable="d"
+      d:DesignHeight="1024" d:DesignWidth="1440"
       
-      Title="Registration" Height="450" Width="800" Background="#E5E5E5">
-    <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="102" Margin="100,125,0,0" Stroke="Black" VerticalAlignment="Top" Width="344">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="Maaans.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-
+      Title="Registration">
+    <Grid Height="450" VerticalAlignment="Bottom">
+        <Image Source="/Stationery store;component/Res/Cans.png" Stretch="Fill" Opacity="0.5" Margin="0,-541,0,0"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Height="60" Margin="33,-370,0,0" VerticalAlignment="Top" Background="White" Width="300" FontSize="28"/>
+        <Label Content="Регистрация" HorizontalAlignment="Center" Height="71" Margin="548,-500,623.6,0" VerticalAlignment="Top" Background="White" Width="262" FontSize="42"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Height="60" Margin="33,-287,0,0" VerticalAlignment="Top" Background="White" Width="300" FontSize="28"/>
+        <Label Content="Номер телефона" HorizontalAlignment="Left" Height="60" Margin="33,-204,0,0" VerticalAlignment="Top" Background="White" Width="300" FontSize="28"/>
+        <Label Content="Возраст" HorizontalAlignment="Left" Height="60" Margin="33,-121,0,0" VerticalAlignment="Top" Background="White" Width="300" FontSize="28"/>
+        <Label Content="Адрес" HorizontalAlignment="Left" Height="60" Margin="33,-38,0,0" VerticalAlignment="Top" Background="White" Width="300" FontSize="28"/>
+        <Label Content="Придумайте логин" HorizontalAlignment="Left" Height="60" Margin="33,45,0,0" VerticalAlignment="Top" Background="White" Width="300" FontSize="28"/>
+        <Label Content="Придумайте пароль" HorizontalAlignment="Left" Height="60" Margin="33,128,0,0" VerticalAlignment="Top" Background="White" Width="300" FontSize="28"/>
+        <TextBox x:Name="NameTB" HorizontalAlignment="Left" Height="60" Margin="372,-370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="599" FontSize="28"/>
+        <TextBox x:Name="SurnameTB" HorizontalAlignment="Left" Height="60" Margin="372,-287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="599" FontSize="28"/>
+        <TextBox x:Name="PhoneTB" HorizontalAlignment="Left" Height="60" Margin="372,-204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="599" FontSize="28"/>
+        <TextBox x:Name="AgeTB" HorizontalAlignment="Left" Height="60" Margin="372,-121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="599" FontSize="28"/>
+        <TextBox x:Name="adressTB" HorizontalAlignment="Left" Height="60" Margin="372,-38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="599" FontSize="28"/>
+        <TextBox x:Name="LoginTB" HorizontalAlignment="Left" Height="60" Margin="372,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="599" FontSize="28"/>
+        <TextBox x:Name="PasswordTB" HorizontalAlignment="Left" Height="60" Margin="372,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="White" Width="599" FontSize="28"/>
+        <Button Content="OK" HorizontalAlignment="Center" Margin="484,299,649.6,0" VerticalAlignment="Top" Width="300" Height="80" FontSize="36" Background="White" Click="Button_ClickRegis"/>
+        <Button Content="Назад" HorizontalAlignment="Center" Margin="91,299,1042.6,0" VerticalAlignment="Top" Width="300" Height="80" FontSize="36" Background="White" Click="Button_ClickNazad"/>
     </Grid>
 </Window>

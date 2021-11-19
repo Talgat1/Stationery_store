@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Stationery_store.db;
+using Stationery_store.authoriztion;
+using Stationery_store;
 
 namespace Stationery_store.registration
 {
@@ -23,6 +26,43 @@ namespace Stationery_store.registration
         public Registration()
         {
             InitializeComponent();
+        }
+
+        private void Button_ClickRegis(object sender, RoutedEventArgs e)
+        {
+            if (SurnameTB.Text == "" || NameTB.Text == "")
+            {
+                MessageBox.Show("Введите авсе данные");
+            }
+            else
+            {
+                Сustomer customer = new Сustomer();
+
+                customer.Name = NameTB.Text;
+                customer.Surname = SurnameTB.Text;
+                customer.Phone = PhoneTB.Text;
+                customer.Age = Convert.ToInt32(AgeTB.Text);
+                customer.address = adressTB.Text;
+
+                User user = new User();
+                user.Login = LoginTB.Text;
+                user.Password = PasswordTB.Text;
+                user.Id_role = 111112;               
+                MainWindow.db.User.Add(user);
+                MainWindow.db.Сustomer.Add(customer);
+                MainWindow.db.SaveChanges();
+                MessageBox.Show("Вы успешно зарегестрированы, теперь войдите в приложение.");
+                MainWindow win = new MainWindow();
+                this.Close();
+                win.Show();
+            }
+        }
+
+        private void Button_ClickNazad(object sender, RoutedEventArgs e)
+        {
+            Authoriztion aut = new Authoriztion();
+            this.Close();
+            aut.Show();
         }
     }
 }
