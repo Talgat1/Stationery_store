@@ -9,7 +9,7 @@
       Title="Authoriztion">
     <Grid Height="450" VerticalAlignment="Bottom">
         
-        <Image Source="/Stationery store;component/Res/Cans.png" Stretch="Fill" Opacity="0.5" Margin="0,-541,0,0" Grid.ColumnSpan="2"/>
+        <Image Source="/Stationery store;component/Res/Cans.png" Stretch="Fill" Opacity="0.5" Margin="0,-541,0,0" />
         <Rectangle HorizontalAlignment="Left" Height="205" Margin="0,-452,0,0" Stroke="Black" VerticalAlignment="Top" Width="225">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="Maaans.png"/>
