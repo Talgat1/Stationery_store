@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Stationery_store.registration
+namespace Stationery_store.zakaz
 {
     /// <summary>
     /// Логика взаимодействия для Vhod.xaml

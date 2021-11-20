@@ -121,7 +121,7 @@
     <Compile Include="registration\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
-    <Compile Include="registration\Vhod.xaml.cs">
+    <Compile Include="zakaz\Vhod.xaml.cs">
       <DependentUpon>Vhod.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -144,7 +144,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="registration\Vhod.xaml">
+    <Page Include="zakaz\Vhod.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -30,31 +30,43 @@ namespace Stationery_store.registration
 
         private void Button_ClickRegis(object sender, RoutedEventArgs e)
         {
-            if (SurnameTB.Text == "" || NameTB.Text == "")
+            if (SurnameTB.Text == "" || NameTB.Text == "" || PhoneTB.Text == "" || AgeTB.Text == "" || adressTB.Text == "" || LoginTB.Text == "" || PasswordTB.Text == "")
             {
-                MessageBox.Show("Введите авсе данные");
+                MessageBox.Show("Введите все данные");
             }
             else
             {
-                Сustomer customer = new Сustomer();
+                try
+                {
+                    Сustomer customer = new Сustomer();
+                    customer.Name = NameTB.Text;
+                    customer.Surname = SurnameTB.Text;
+                    customer.Phone = PhoneTB.Text;
+                    customer.Age = Convert.ToInt32(AgeTB.Text);
+                    customer.address = adressTB.Text;
+                    User user = new User();
+                    user.Login = LoginTB.Text;
+                    user.Password = PasswordTB.Text;
+                    user.Id_role = 111112;
+                    MainWindow.db.User.Add(user);
+                    MainWindow.db.Сustomer.Add(customer);
+                    MainWindow.db.SaveChanges();
+                    MessageBox.Show("Вы успешно зарегестрированы, теперь войдите в приложение.");
+                    MainWindow win = new MainWindow();
+                    this.Close();
+                    win.Show();
+                }
+                catch
+                {
+                    foreach (var user in MainWindow.db.User)
+                    {
+                        if (user.Login == LoginTB.Text.Trim())
+                        {
+                            MessageBox.Show("Такой логин уже существет, введите другой");
+                        }
+                    }
 
-                customer.Name = NameTB.Text;
-                customer.Surname = SurnameTB.Text;
-                customer.Phone = PhoneTB.Text;
-                customer.Age = Convert.ToInt32(AgeTB.Text);
-                customer.address = adressTB.Text;
-
-                User user = new User();
-                user.Login = LoginTB.Text;
-                user.Password = PasswordTB.Text;
-                user.Id_role = 111112;               
-                MainWindow.db.User.Add(user);
-                MainWindow.db.Сustomer.Add(customer);
-                MainWindow.db.SaveChanges();
-                MessageBox.Show("Вы успешно зарегестрированы, теперь войдите в приложение.");
-                MainWindow win = new MainWindow();
-                this.Close();
-                win.Show();
+                }                
             }
         }
 

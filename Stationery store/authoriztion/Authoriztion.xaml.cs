@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using Stationery_store.authoriztion;
 using Stationery_store.registration;
 using Stationery_store.db;
+using Stationery_store.zakaz;
+using Stationery_store;
 
 
 namespace Stationery_store.authoriztion
@@ -34,14 +36,14 @@ namespace Stationery_store.authoriztion
             Vhod vh = new Vhod();
             foreach (var user in MainWindow.db.User)
             {
-                if (user.Login == LoginTB.Text.Trim() && user.Password == PasswordTB.Text.Trim())
+                /*if (user.Login == LoginTB.Text.Trim() && user.Password == PasswordTB.Text.Trim())
                 {
                     MessageBox.Show($"Привет Пользователь {user.Login}");
                     Vhod whod = new Vhod();
                     this.Close();
                     whod.Show();
                     break;
-                }
+                }*/
 
 
                 if (user.Login == LoginTB.Text.Trim())
@@ -49,8 +51,8 @@ namespace Stationery_store.authoriztion
                     if (user.Password == PasswordTB.Text.Trim() && user.Id_role == 111112)
                     {
                         MessageBox.Show($"Привет Пользователь {user.Login}");
-                        MainWindow.authUser = user;
-                        MessageBox.Show($"{MainWindow.authUser}");
+                        //MainWindow.authUser = user;
+                        //MessageBox.Show($"{MainWindow.authUser}");
                         this.Close();
                         vh.Show();
                     }
