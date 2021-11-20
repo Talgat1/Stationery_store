@@ -118,6 +118,7 @@
     <Compile Include="authoriztion\Authoriztion.xaml.cs">
       <DependentUpon>Authoriztion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
     <Compile Include="registration\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
