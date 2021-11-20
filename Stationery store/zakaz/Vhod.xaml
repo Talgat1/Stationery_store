@@ -8,27 +8,14 @@
       d:DesignHeight="1024" d:DesignWidth="1440"
       Title="Vhod">
     <Grid Background="White" >
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
-            
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300" />
-            <ColumnDefinition Width="140" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Content="Товар" FontSize="32" />
-        <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Content="Цена" FontSize="32" />
-        
+        <DataGrid AutoGenerateColumns="False" x:Name="Zakaz" ColumnWidth="*" Margin="0,0,1140,0" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Width="150" Header="Товар"/>
+                <DataGridTextColumn Binding="{Binding Price}" Width="150" Header="Цена"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Поиск по названию:" HorizontalAlignment="Left" Margin="486,28,0,0" VerticalAlignment="Top" Height="40" Width="182" FontSize="18"/>
+        <TextBox x:Name="Poisk" HorizontalAlignment="Left" Height="40" Margin="673,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" Background="#FFEAEAEA" TextChanged="Poisk_TextChanged"/>
+
     </Grid>
 </Window>

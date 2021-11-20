@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Stationery_store.db;
 
 namespace Stationery_store.zakaz
 {
@@ -20,9 +21,29 @@ namespace Stationery_store.zakaz
     /// </summary>
     public partial class Vhod : Window
     {
+
+       public static Stationery_storeEntities2 db = new Stationery_storeEntities2();
         public Vhod()
         {
             InitializeComponent();
+            db = new Stationery_storeEntities2();
+
+            Zakaz.ItemsSource = db.Product.ToList();
+
+            CollectionView vi = (CollectionView)CollectionViewSource.GetDefaultView(Zakaz.ItemsSource);
+            vi.Filter = poisk;
+        }
+        private bool poisk(object item)
+        {
+            if (String.IsNullOrEmpty(Poisk.Text))
+                return true;
+            else 
+                return ((item as Product).Name.IndexOf(Poisk.Text, StringComparison.OrdinalIgnoreCase)>=0);
+        }
+
+        private void Poisk_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(Zakaz.ItemsSource).Refresh();
         }
     }
 }

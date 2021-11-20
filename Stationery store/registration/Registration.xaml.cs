@@ -36,37 +36,36 @@ namespace Stationery_store.registration
             }
             else
             {
+                Сustomer customer = new Сustomer();
+                customer.Name = NameTB.Text;
+                customer.Surname = SurnameTB.Text;
+                customer.Phone = PhoneTB.Text;
+                customer.Age = Convert.ToInt32(AgeTB.Text);
+                customer.address = adressTB.Text;
+                User user = new User();
+                user.Login = LoginTB.Text;
+                user.Password = PasswordTB.Text;
+                user.Id_role = 111112;
+                MainWindow.db.User.Add(user);
+                MainWindow.db.Сustomer.Add(customer);
                 try
                 {
-                    Сustomer customer = new Сustomer();
-                    customer.Name = NameTB.Text;
-                    customer.Surname = SurnameTB.Text;
-                    customer.Phone = PhoneTB.Text;
-                    customer.Age = Convert.ToInt32(AgeTB.Text);
-                    customer.address = adressTB.Text;
-                    User user = new User();
-                    user.Login = LoginTB.Text;
-                    user.Password = PasswordTB.Text;
-                    user.Id_role = 111112;
-                    MainWindow.db.User.Add(user);
-                    MainWindow.db.Сustomer.Add(customer);
                     MainWindow.db.SaveChanges();
+                }
+                catch
+                {
+                    MessageBox.Show("Такой логин уже существет, введите другой");
+                    return;
+                }
+                
+                finally
+                {
                     MessageBox.Show("Вы успешно зарегестрированы, теперь войдите в приложение.");
                     MainWindow win = new MainWindow();
                     this.Close();
                     win.Show();
                 }
-                catch
-                {
-                    foreach (var user in MainWindow.db.User)
-                    {
-                        if (user.Login == LoginTB.Text.Trim())
-                        {
-                            MessageBox.Show("Такой логин уже существет, введите другой");
-                        }
-                    }
-
-                }                
+                
             }
         }
 
