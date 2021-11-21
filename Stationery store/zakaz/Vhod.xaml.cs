@@ -45,5 +45,16 @@ namespace Stationery_store.zakaz
         {
             CollectionViewSource.GetDefaultView(Zakaz.ItemsSource).Refresh();
         }
+        int SumPeper = 0;
+        private void Button_ClickPlPeper(object sender, RoutedEventArgs e)
+        {
+            Itog.Text = (int.Parse(Itog.Text) + 20).ToString();
+            SumPeper = +1;
+        }
+        private void Button_ClickMiPeper(object sender, RoutedEventArgs e)
+        {
+            Itog.Text = (int.Parse(Itog.Text) - 20).ToString();
+            SumPeper = -1;
+        }
     }
 }
