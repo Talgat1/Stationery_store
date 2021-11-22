@@ -6,9 +6,9 @@
       xmlns:local="clr-namespace:Stationery_store.registration"
       mc:Ignorable="d" 
       d:DesignHeight="1024" d:DesignWidth="1440"
-      Title="Vhod">
+      Title="Vhod" ResizeMode="NoResize">
     <Grid Background="White" >
-        <DataGrid AutoGenerateColumns="False" x:Name="Zakaz" ColumnWidth="*" Margin="0,150,1140,0" >
+        <DataGrid AutoGenerateColumns="False" x:Name="Zakaz" ColumnWidth="300" Margin="0,150,1140,0" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Name}" Width="150"  Header="Товар"/>
                 <DataGridTextColumn Binding="{Binding Price}" Width="150" Header="Цена"/>
@@ -16,32 +16,33 @@
         </DataGrid>
         <Label Content="Поиск товара:" HorizontalAlignment="Left" Margin="19,78,0,0" VerticalAlignment="Top" Height="40" Width="130" FontSize="18"/>
         <TextBox x:Name="Poisk" HorizontalAlignment="Left" Height="40" Margin="149,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" Background="#FFEAEAEA" TextChanged="Poisk_TextChanged"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,178,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208" Click="Button_ClickPlPeper"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,178,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208" Click="Button_ClickMiPeper"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,202,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,202,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,226,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,226,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,250,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,250,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,274,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,274,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,298,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,298,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,322,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,322,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,346,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,346,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,370,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,370,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,394,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,394,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,418,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,418,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,442,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,442,0,0" VerticalAlignment="Top" Width="30" Height="24" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,175,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208" Click="Button_ClickPlPeper"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,175,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208" Click="Button_ClickMiPeper"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,194,0,0" VerticalAlignment="Top" Width="30" Height="18"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,194,0,0" VerticalAlignment="Top" Width="30" Height="18"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,213,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,213,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,232,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,232,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,251,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,251,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,270,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,270,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,289,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,289,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,308,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,308,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,327,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,327,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,346,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,346,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,365,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,365,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="294,384,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="329,384,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
         <Label Content="Заказ" HorizontalAlignment="Center" Margin="806,10,547.6,0" VerticalAlignment="Top" Width="80" Height="45" FontSize="28"/>
         <Label Content="Итого:" HorizontalAlignment="Left" Margin="694,160,0,0" VerticalAlignment="Top" Height="30" Width="58" FontSize="16"/>
         <TextBox x:Name="Itog" HorizontalAlignment="Left" Margin="752,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="30" Background="#FFEAEAEA" RenderTransformOrigin="0.964,0.581"/>
+        <Button Content="Заказать" HorizontalAlignment="Left" Margin="856,415,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

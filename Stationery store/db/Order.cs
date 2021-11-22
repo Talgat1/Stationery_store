@@ -21,9 +21,9 @@ namespace Stationery_store.db
         }
     
         public int Id_order { get; set; }
-        public Nullable<System.DateTime> Date_order { get; set; }
+        public Nullable<System.DateTime> Data { get; set; }
         public Nullable<int> Order_cost { get; set; }
-        public Nullable<bool> Paid { get; set; }
+        public Nullable<int> Amount { get; set; }
         public int Id_employees { get; set; }
         public int Id_delivery { get; set; }
         public int Id_customer { get; set; }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище Stationery_storeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище Stationery_storeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Delivery">
           <Key>
             <PropertyRef Name="Id_delivery" />
@@ -30,21 +30,21 @@
           <Key>
             <PropertyRef Name="Id_order" />
           </Key>
-          <Property Name="Id_order" Type="int" Nullable="false" />
-          <Property Name="Date_order" Type="date" />
+          <Property Name="Id_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Data" Type="date" />
           <Property Name="Order_cost" Type="int" />
-          <Property Name="Paid" Type="bit" />
+          <Property Name="Amount" Type="int" />
           <Property Name="Id_employees" Type="int" Nullable="false" />
           <Property Name="Id_delivery" Type="int" Nullable="false" />
           <Property Name="Id_customer" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Order_Product">
+        <EntityType Name="Order_Product11">
           <Key>
-            <PropertyRef Name="Id_product" />
             <PropertyRef Name="Id_order" />
+            <PropertyRef Name="Id_product" />
           </Key>
-          <Property Name="Id_product" Type="int" Nullable="false" />
           <Property Name="Id_order" Type="int" Nullable="false" />
+          <Property Name="Id_product" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -163,26 +163,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Order_Product_Order">
+        <Association Name="FK_Order_Product11_Order">
           <End Role="Order" Type="Self.Order" Multiplicity="1" />
-          <End Role="Order_Product" Type="Self.Order_Product" Multiplicity="*" />
+          <End Role="Order_Product11" Type="Self.Order_Product11" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order">
               <PropertyRef Name="Id_order" />
             </Principal>
-            <Dependent Role="Order_Product">
+            <Dependent Role="Order_Product11">
               <PropertyRef Name="Id_order" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Order_Product_Product">
+        <Association Name="FK_Order_Product11_Product">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
-          <End Role="Order_Product" Type="Self.Order_Product" Multiplicity="*" />
+          <End Role="Order_Product11" Type="Self.Order_Product11" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="Id_product" />
             </Principal>
-            <Dependent Role="Order_Product">
+            <Dependent Role="Order_Product11">
               <PropertyRef Name="Id_product" />
             </Dependent>
           </ReferentialConstraint>
@@ -282,7 +282,7 @@
           <EntitySet Name="Delivery" EntityType="Self.Delivery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Order_Product" EntityType="Self.Order_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_Product11" EntityType="Self.Order_Product11" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product_Provider" EntityType="Self.Product_Provider" Schema="dbo" store:Type="Tables" />
@@ -307,13 +307,13 @@
             <End Role="Employees" EntitySet="Employees" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_Product_Order" Association="Self.FK_Order_Product_Order">
+          <AssociationSet Name="FK_Order_Product11_Order" Association="Self.FK_Order_Product11_Order">
             <End Role="Order" EntitySet="Order" />
-            <End Role="Order_Product" EntitySet="Order_Product" />
+            <End Role="Order_Product11" EntitySet="Order_Product11" />
           </AssociationSet>
-          <AssociationSet Name="FK_Order_Product_Product" Association="Self.FK_Order_Product_Product">
+          <AssociationSet Name="FK_Order_Product11_Product" Association="Self.FK_Order_Product11_Product">
             <End Role="Product" EntitySet="Product" />
-            <End Role="Order_Product" EntitySet="Order_Product" />
+            <End Role="Order_Product11" EntitySet="Order_Product11" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Сustomer" Association="Self.FK_Order_Сustomer">
             <End Role="Сustomer" EntitySet="Сustomer" />
@@ -336,7 +336,8 @@
             <End Role="Сustomer" EntitySet="Сustomer" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Stationery_storeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -369,17 +370,17 @@
           <Key>
             <PropertyRef Name="Id_order" />
           </Key>
-          <Property Name="Id_order" Type="Int32" Nullable="false" />
-          <Property Name="Date_order" Type="DateTime" Precision="0" />
+          <Property Name="Id_order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="DateTime" Precision="0" />
           <Property Name="Order_cost" Type="Int32" />
-          <Property Name="Paid" Type="Boolean" />
+          <Property Name="Amount" Type="Int32" />
           <Property Name="Id_employees" Type="Int32" Nullable="false" />
           <Property Name="Id_delivery" Type="Int32" Nullable="false" />
           <Property Name="Id_customer" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Delivery" Relationship="Self.FK_Order_Delivery" FromRole="Order" ToRole="Delivery" />
           <NavigationProperty Name="Employees" Relationship="Self.FK_Order_Employees" FromRole="Order" ToRole="Employees" />
           <NavigationProperty Name="Сustomer" Relationship="Self.FK_Order_Сustomer" FromRole="Order" ToRole="Сustomer" />
-          <NavigationProperty Name="Product" Relationship="Self.Order_Product" FromRole="Order" ToRole="Product" />
+          <NavigationProperty Name="Product" Relationship="Self.Order_Product11" FromRole="Order" ToRole="Product" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -396,7 +397,7 @@
           <Property Name="Id_product" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Int32" />
-          <NavigationProperty Name="Order" Relationship="Self.Order_Product" FromRole="Product" ToRole="Order" />
+          <NavigationProperty Name="Order" Relationship="Self.Order_Product11" FromRole="Product" ToRole="Order" />
           <NavigationProperty Name="Provider" Relationship="Self.Product_Provider" FromRole="Product" ToRole="Provider" />
         </EntityType>
         <EntityType Name="Provider">
@@ -407,6 +408,14 @@
           <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Product" Relationship="Self.Product_Provider" FromRole="Provider" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id_role" />
+          </Key>
+          <Property Name="Id_role" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -425,16 +434,16 @@
           <Property Name="Id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Login" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_User" FromRole="User" ToRole="Employees" />
-          <NavigationProperty Name="Сustomer" Relationship="Self.FK_Сustomer_User" FromRole="User" ToRole="Сustomer" />
           <Property Name="Id_role" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Role" Relationship="Stationery_storeModel.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_User" FromRole="User" ToRole="Employees" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Сustomer" Relationship="Self.FK_Сustomer_User" FromRole="User" ToRole="Сustomer" />
         </EntityType>
         <EntityType Name="Сustomer">
           <Key>
             <PropertyRef Name="Id_customer" />
           </Key>
-          <Property Name="Id_customer" Type="Int32" Nullable="false" />
+          <Property Name="Id_customer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Surname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -504,6 +513,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id_role" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="Id_role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Сustomer_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Сustomer" Type="Self.Сustomer" Multiplicity="*" />
@@ -516,7 +537,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Order_Product">
+        <Association Name="Order_Product11">
           <End Role="Order" Type="Self.Order" Multiplicity="*" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
         </Association>
@@ -524,13 +545,14 @@
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
           <End Role="Provider" Type="Self.Provider" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Stationery_storeEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Stationery_storeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Delivery" EntityType="Self.Delivery" />
           <EntitySet Name="Employees" EntityType="Self.Employees" />
           <EntitySet Name="Order" EntityType="Self.Order" />
           <EntitySet Name="Position" EntityType="Self.Position" />
           <EntitySet Name="Product" EntityType="Self.Product" />
           <EntitySet Name="Provider" EntityType="Self.Provider" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="User" EntityType="Self.User" />
           <EntitySet Name="Сustomer" EntityType="Self.Сustomer" />
@@ -554,11 +576,15 @@
             <End Role="Сustomer" EntitySet="Сustomer" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
           <AssociationSet Name="FK_Сustomer_User" Association="Self.FK_Сustomer_User">
             <End Role="User" EntitySet="User" />
             <End Role="Сustomer" EntitySet="Сustomer" />
           </AssociationSet>
-          <AssociationSet Name="Order_Product" Association="Self.Order_Product">
+          <AssociationSet Name="Order_Product11" Association="Self.Order_Product11">
             <End Role="Order" EntitySet="Order" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
@@ -596,11 +622,6 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <EntitySet Name="Role" EntityType="Stationery_storeModel.Role" />
-          <AssociationSet Name="FK_User_Role" Association="Stationery_storeModel.FK_User_Role">
-            <End Role="Role" EntitySet="Role" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -613,32 +634,12 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
-        <EntityType Name="Role">
-          <Key>
-            <PropertyRef Name="Id_role" />
-          </Key>
-          <Property Name="Id_role" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="User" Relationship="Stationery_storeModel.FK_User_Role" FromRole="Role" ToRole="User" />
-        </EntityType>
-        <Association Name="FK_User_Role">
-          <End Type="Stationery_storeModel.Role" Role="Role" Multiplicity="1" />
-          <End Type="Stationery_storeModel.User" Role="User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role">
-              <PropertyRef Name="Id_role" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="Id_role" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Stationery_storeModelContainer" CdmEntityContainer="Stationery_storeEntities2">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Stationery_storeModelContainer" CdmEntityContainer="Stationery_storeEntities">
           <EntitySetMapping Name="Delivery">
             <EntityTypeMapping TypeName="Stationery_storeModel.Delivery">
               <MappingFragment StoreEntitySet="Delivery">
@@ -666,9 +667,9 @@
             <EntityTypeMapping TypeName="Stationery_storeModel.Order">
               <MappingFragment StoreEntitySet="Order">
                 <ScalarProperty Name="Id_order" ColumnName="Id_order" />
-                <ScalarProperty Name="Date_order" ColumnName="Date_order" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
                 <ScalarProperty Name="Order_cost" ColumnName="Order_cost" />
-                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="Id_employees" ColumnName="Id_employees" />
                 <ScalarProperty Name="Id_delivery" ColumnName="Id_delivery" />
                 <ScalarProperty Name="Id_customer" ColumnName="Id_customer" />
@@ -701,6 +702,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="Stationery_storeModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Id_role" ColumnName="Id_role" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="Stationery_storeModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -715,10 +724,10 @@
           <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="Stationery_storeModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="Id_role" ColumnName="Id_role" />
                 <ScalarProperty Name="Id_user" ColumnName="Id_user" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Id_role" ColumnName="Id_role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -735,7 +744,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Order_Product" TypeName="Stationery_storeModel.Order_Product" StoreEntitySet="Order_Product">
+          <AssociationSetMapping Name="Order_Product11" TypeName="Stationery_storeModel.Order_Product11" StoreEntitySet="Order_Product11">
             <EndProperty Name="Order">
               <ScalarProperty Name="Id_order" ColumnName="Id_order" />
             </EndProperty>
@@ -775,14 +784,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище Stationery_storeModel.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище Stationery_storeModel.sp_upgraddiagrams" />
-          <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="Stationery_storeModel.Role">
-              <MappingFragment StoreEntitySet="Role">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id_role" ColumnName="Id_role" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

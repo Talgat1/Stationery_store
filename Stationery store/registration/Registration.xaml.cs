@@ -61,7 +61,7 @@ namespace Stationery_store.registration
                 finally
                 {
                     MessageBox.Show("Вы успешно зарегестрированы, теперь войдите в приложение.");
-                    MainWindow win = new MainWindow();
+                    Authoriztion win = new Authoriztion();
                     this.Close();
                     win.Show();
                 }

@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="authoriztion\Authoriztion.xaml.cs">
+      <DependentUpon>Authoriztion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="db\Delivery.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -114,9 +117,6 @@
     </Compile>
     <Compile Include="db\Сustomer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="authoriztion\Authoriztion.xaml.cs">
-      <DependentUpon>Authoriztion.xaml</DependentUpon>
     </Compile>
     <Compile Include="registration\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
@@ -190,6 +190,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="OpenPage.png" />
+    <Resource Include="Res\Cans.png" />
+    <Resource Include="authoriztion\Maaans.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="db\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -200,9 +205,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="OpenPage.png" />
-    <Resource Include="Res\Cans.png" />
-    <Resource Include="authoriztion\Maaans.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
