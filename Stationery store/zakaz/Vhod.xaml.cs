@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Stationery_store.zakaz;
 using Stationery_store.db;
 
 namespace Stationery_store.zakaz
@@ -35,35 +36,87 @@ namespace Stationery_store.zakaz
         }
         private bool poisk(object item)
         {
-            if (String.IsNullOrEmpty(Poisk.Text))
+            if (string.IsNullOrEmpty(Poisk.Text))
                 return true;
             else 
-                return ((item as Product).Name.IndexOf(Poisk.Text, StringComparison.OrdinalIgnoreCase)>=0);
+                return (item as Product).Name.IndexOf(Poisk.Text, StringComparison.OrdinalIgnoreCase)>=0;
         }
 
         private void Poisk_TextChanged(object sender, TextChangedEventArgs e)
         {
             CollectionViewSource.GetDefaultView(Zakaz.ItemsSource).Refresh();
         }
-        int SumPeper = 0;
-        public int itog { get; set; } = 0;
-        
+        public int coll { get; set; } = 0;
+        public int summ { get; set; } = 0;
+        public int dili { get; set; } = 70002;
+        public int cust { get; set; } = 2;
+
         private void Button_ClickPlPeper(object sender, RoutedEventArgs e)
         {
-            itog = itog + 20;
-            Itog.Text = Convert.ToString(itog);           
-            SumPeper = +1;
-            Order order = new Order();
-            order.Data = Convert.ToDateTime(2021-11-22);
-            order.Amount = SumPeper;
-            order.Order_cost = itog;
-            order.Id_employees = 40003;
+            foreach (var pr in MainWindow.db.Product)
+            {
+                if (pr.Name == NameTovar.Text.Trim())
+                {
+                    coll = coll + 1;
+                    Coll.Text = Convert.ToString(coll);
+                    Price.Text = pr.Price.ToString();
+                    summ = coll * Convert.ToInt32(Price.Text);                  
+                    Itog.Text = Convert.ToString(summ);                   
+                }
+            }
         }
         private void Button_ClickMiPeper(object sender, RoutedEventArgs e)
         {
-            itog = itog - 20;
-            Itog.Text = Convert.ToString(itog);
-            SumPeper = -1;
+            if (coll > 1)
+            {
+                coll = coll - 1;
+                Coll.Text = Convert.ToString(coll);                
+                summ = summ = coll * Convert.ToInt32(Price.Text);
+                Itog.Text = Convert.ToString(summ);
+            }           
+        }
+
+        private void Button_ClickZakaz(object sender, RoutedEventArgs e)
+        {
+            if (NameTovar.Text == "")
+            {
+                MessageBox.Show("Введите название товара");
+            }
+            else
+            {
+                Order op = new Order();
+                op.Amount = coll;
+                op.Data = Convert.ToDateTime("2021-11-23 00:00:00.000");
+                op.Order_cost = Convert.ToInt32(Itog.Text);
+                op.Id_employees = 50003;
+                op.Id_delivery = dili + 1;
+                op.Id_customer = cust + 1;
+                Delivery de = new Delivery();
+                de.Id_delivery = dili + 1;
+                de.Delivered = false;
+                de.Order_weight = 20;
+                MainWindow.db.Order.Add(op);
+                MainWindow.db.Delivery.Add(de);
+                try
+                {
+                    MainWindow.db.SaveChanges();
+                }
+                catch
+                {
+                    MessageBox.Show("Произошла ошибка, повторите заказ еще раз!");
+                    return;
+                }
+
+                finally
+                {
+                    MessageBox.Show("Ваш заказ оформлен успешно!");
+                    //Authoriztion win = new Authoriztion();
+                    this.Close();
+                    //win.Show();
+                }
+
+            }
+
         }
     }
 }

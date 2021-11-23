@@ -8,7 +8,7 @@
       d:DesignHeight="1024" d:DesignWidth="1440"
       Title="Vhod" ResizeMode="NoResize">
     <Grid Background="White" >
-        <DataGrid AutoGenerateColumns="False" x:Name="Zakaz" ColumnWidth="300" Margin="0,150,1140,0" >
+        <DataGrid AutoGenerateColumns="True" x:Name="Zakaz" ColumnWidth="*" Margin="100,150,1040,0" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Name}" Width="150"  Header="Товар"/>
                 <DataGridTextColumn Binding="{Binding Price}" Width="150" Header="Цена"/>
@@ -16,33 +16,17 @@
         </DataGrid>
         <Label Content="Поиск товара:" HorizontalAlignment="Left" Margin="19,78,0,0" VerticalAlignment="Top" Height="40" Width="130" FontSize="18"/>
         <TextBox x:Name="Poisk" HorizontalAlignment="Left" Height="40" Margin="149,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="282" Background="#FFEAEAEA" TextChanged="Poisk_TextChanged"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,175,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208" Click="Button_ClickPlPeper"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,175,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208" Click="Button_ClickMiPeper"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,194,0,0" VerticalAlignment="Top" Width="30" Height="18"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,194,0,0" VerticalAlignment="Top" Width="30" Height="18"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,213,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,213,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,232,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,232,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,251,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,251,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,270,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,270,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,289,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,289,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,308,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,308,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,327,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,327,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,346,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,346,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,365,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,365,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="294,384,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="329,384,0,0" VerticalAlignment="Top" Width="30" Height="18" RenderTransformOrigin="0.525,-0.208"/>
-        <Label Content="Заказ" HorizontalAlignment="Center" Margin="806,10,547.6,0" VerticalAlignment="Top" Width="80" Height="45" FontSize="28"/>
-        <Label Content="Итого:" HorizontalAlignment="Left" Margin="694,160,0,0" VerticalAlignment="Top" Height="30" Width="58" FontSize="16"/>
-        <TextBox x:Name="Itog" HorizontalAlignment="Left" Margin="752,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Height="30" Background="#FFEAEAEA" RenderTransformOrigin="0.964,0.581"/>
-        <Button Content="Заказать" HorizontalAlignment="Left" Margin="856,415,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="901,193,0,0" VerticalAlignment="Top" Width="30" Height="32" RenderTransformOrigin="0.525,-0.208" Click="Button_ClickPlPeper"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="954,193,0,0" VerticalAlignment="Top" Width="30" Height="32" RenderTransformOrigin="0.525,-0.208" Click="Button_ClickMiPeper"/>
+        <Label Content="Заказ" HorizontalAlignment="Center" Margin="733,43,620.6,0" VerticalAlignment="Top" Width="80" Height="45" FontSize="28"/>
+        <Label Content="Итого:" HorizontalAlignment="Left" Margin="624,272,0,0" VerticalAlignment="Top" Height="32" Width="77" FontSize="18" RenderTransformOrigin="1,0.56"/>
+        <Button Content="Заказать" HorizontalAlignment="Left" Margin="624,328,0,0" VerticalAlignment="Top" Width="193" Height="65" FontSize="22" Click="Button_ClickZakaz"/>
+        <Label Content="Введите название товара:" HorizontalAlignment="Left" Margin="624,150,0,0" VerticalAlignment="Top" FontSize="18" Width="224" />
+        <TextBox x:Name="NameTovar" HorizontalAlignment="Left" Height="34" Margin="856,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="277" Background="#FFEAEAEA"/>
+        <Label Content="Количество:" HorizontalAlignment="Left" Margin="624,189,0,0" VerticalAlignment="Top" FontSize="18" Width="112" Height="32" />
+        <TextBox x:Name="Coll" HorizontalAlignment="Left" Height="34" Margin="741,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Background="#FFEAEAEA" Text="0"/>
+        <TextBox x:Name="Itog" HorizontalAlignment="Left" Margin="741,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Height="32" Background="#FFEAEAEA" Text="0"/>
+        <Label Content="Цена(руб.):" HorizontalAlignment="Left" Margin="624,226,0,0" VerticalAlignment="Top" Height="32" Width="112" FontSize="18"/>
+        <TextBox x:Name="Price" HorizontalAlignment="Left" Height="32" Margin="741,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Background="#FFEAEAEA" Text="0"/>
     </Grid>
 </Window>
