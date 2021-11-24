@@ -23,11 +23,11 @@ namespace Stationery_store.zakaz
     public partial class Vhod : Window
     {
         
-        public static Stationery_storeEntities db = new Stationery_storeEntities();
+        public static Stationery_storeEntities1 db = new Stationery_storeEntities1();
         public Vhod()
         {
             InitializeComponent();
-            db = new Stationery_storeEntities();
+            db = new Stationery_storeEntities1();
 
             Zakaz.ItemsSource = db.Product.ToList();
 
@@ -49,7 +49,9 @@ namespace Stationery_store.zakaz
         public int coll { get; set; } = 0;
         public int summ { get; set; } = 0;
         public int dili { get; set; } = 70002;
-        public int cust { get; set; } = 2;
+        public int cust { get; set; } = 1004;
+
+        string dateString = null;
 
         private void Button_ClickPlPeper(object sender, RoutedEventArgs e)
         {
@@ -86,13 +88,17 @@ namespace Stationery_store.zakaz
             {
                 Order op = new Order();
                 op.Amount = coll;
-                op.Data = Convert.ToDateTime("2021-11-23 00:00:00.000");
+                dateString = "2021-11-17 00:00:00.000";
+                DateTime dateTime1 = Convert.ToDateTime(dateString);
+                op.Data = dateTime1;
                 op.Order_cost = Convert.ToInt32(Itog.Text);
-                op.Id_employees = 50003;
+                op.Id_employees = 40003;
                 op.Id_delivery = dili + 1;
                 op.Id_customer = cust + 1;
                 Delivery de = new Delivery();
                 de.Id_delivery = dili + 1;
+                DateTime dateTime = Convert.ToDateTime(dateString);
+                de.Date_delivery = dateTime;
                 de.Delivered = false;
                 de.Order_weight = 20;
                 MainWindow.db.Order.Add(op);
@@ -109,10 +115,8 @@ namespace Stationery_store.zakaz
 
                 finally
                 {
-                    MessageBox.Show("Ваш заказ оформлен успешно!");
-                    //Authoriztion win = new Authoriztion();
+                    MessageBox.Show("Ваш заказ оформлен успешно!");                    
                     this.Close();
-                    //win.Show();
                 }
 
             }

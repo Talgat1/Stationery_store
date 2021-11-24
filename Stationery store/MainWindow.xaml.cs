@@ -22,7 +22,7 @@ namespace Stationery_store
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static Stationery_storeEntities db = new Stationery_storeEntities();
+        public static Stationery_storeEntities1 db = new Stationery_storeEntities1();
 
         public static User authUser;
         public MainWindow()

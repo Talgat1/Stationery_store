@@ -15,10 +15,10 @@ namespace Stationery_store.db
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Stationery_storeEntities : DbContext
+    public partial class Stationery_storeEntities1 : DbContext
     {
-        public Stationery_storeEntities()
-            : base("name=Stationery_storeEntities")
+        public Stationery_storeEntities1()
+            : base("name=Stationery_storeEntities1")
         {
         }
     

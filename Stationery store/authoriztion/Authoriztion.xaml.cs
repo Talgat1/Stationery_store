@@ -64,7 +64,6 @@ namespace Stationery_store.authoriztion
                     }
                 }
             }
-
         }
 
         private void Button_ClickRegis(object sender, RoutedEventArgs e)
